@@ -1,0 +1,15 @@
+{
+  "despesasFixas": {
+    "depreciacaoImobilizado": 38.29,
+    "agua": 50.00,
+    "aluguelCondominio": 500.00,
+    "celular": 40.00,
+    "combustivel": 150.00,
+    "energiaEletrica": 50.00,
+    "internet": 50.00,
+    "limpeza": 100.00,
+    "DAS": 81.90,
+    "aluguelCarro": 100.00,
+    "total": 1160.19
+  }
+}

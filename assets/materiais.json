@@ -1,0 +1,81 @@
+{
+  "materiais": [
+    {
+      "id": 1,
+      "nome": "PETG Preto",
+      "marca": "Voolt3D",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 99.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.10,
+      "tipo": "PETG"
+    },
+    {
+      "id": 2,
+      "nome": "PLA Rosa Claro",
+      "marca": "Genérico",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 102.00,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.10,
+      "tipo": "PLA"
+    },
+    {
+      "id": 3,
+      "nome": "PLA Granito",
+      "marca": "Genérico",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 101.00,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.10,
+      "tipo": "PLA"
+    },
+    {
+      "id": 4,
+      "nome": "PLA Branco",
+      "marca": "Genérico",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 99.00,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.10,
+      "tipo": "PLA"
+    },
+    {
+      "id": 5,
+      "nome": "PLA Marrom",
+      "marca": "Genérico",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 120.00,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.12,
+      "tipo": "PLA"
+    },
+    {
+      "id": 6,
+      "nome": "PLA Azul Ardósia",
+      "marca": "Genérico",
+      "iniciadoEm_g": 1000,
+      "saldoEm_g": 2000,
+      "precoRolo": 106.60,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.11,
+      "tipo": "PLA"
+    },
+    {
+      "id": 7,
+      "nome": "PETG Preto Carbono",
+      "marca": "China",
+      "iniciadoEm_g": 2000,
+      "saldoEm_g": 2000,
+      "precoRolo": 63.15,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.06,
+      "tipo": "PETG"
+    }
+  ]
+}
