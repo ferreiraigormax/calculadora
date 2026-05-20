@@ -1,67 +1,102 @@
 {
   "materiais": [
-    {
-      "id": 1,
-      "nome": "PETG Preto",
-      "marca": "Voolt3D",
+       {
+      "nome": "PETG Preto Voolt3D",
       "precoRolo": 99.90,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.10,
       "tipo": "PETG"
     },
     {
-      "id": 2,
-      "nome": "PLA Rosa Claro",
-      "marca": "Genérico",
+      "nome": "PETG Preto Carbono China",
+      "precoRolo": 63.15,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.06,
+      "tipo": "PETG"
+    },
+    {
+      "nome": "PETG Amarelo Masterprint",
+      "precoRolo": 109.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.11,
+      "tipo": "PETG"
+    },
+    {
+      "nome": "PETG Verde Masterprint",
+      "precoRolo": 71.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.07,
+      "tipo": "PETG"
+    },
+    {
+      "nome": "PETG Azul Masterprint",
+      "precoRolo": 71.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.07,
+      "tipo": "PETG"
+    },
+    {
+      "nome": "PETG Branco Masterprint",
+      "precoRolo": 71.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.07,
+      "tipo": "PETG"
+    },
+        {
+      "nome": "PETG Roxo Suniu",
+      "precoRolo": 81.09,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.08,
+      "tipo": "PETG"
+    },
+        {
+      "nome": "PETG Vermelho Suniu",
+      "precoRolo": 81.09,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.08,
+      "tipo": "PETG"
+    },
+        {
+      "nome": "PETG Dourado Suniu",
+         "precoRolo": 81.09,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.08,
+      "tipo": "PETG"
+    },
+    {
+      "nome": "PLA Rosa Claro Genérico",
       "precoRolo": 102.00,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.10,
       "tipo": "PLA"
     },
     {
-      "id": 3,
-      "nome": "PLA Granito",
-      "marca": "Genérico",
+      "nome": "PLA Granito Genérico",
       "precoRolo": 101.00,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.10,
       "tipo": "PLA"
     },
     {
-      "id": 4,
-      "nome": "PLA Branco",
-      "marca": "Genérico",
+      "nome": "PLA Branco Genérico",
       "precoRolo": 99.00,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.10,
       "tipo": "PLA"
     },
     {
-      "id": 5,
-      "nome": "PLA Marrom",
-      "marca": "Genérico",
+      "nome": "PLA Marrom Genérico",
       "precoRolo": 120.00,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.12,
       "tipo": "PLA"
     },
     {
-      "id": 6,
-      "nome": "PLA Azul Ardósia",
-      "marca": "Genérico",
+      "nome": "PLA Azul Ardósia Genérico",
       "precoRolo": 106.60,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.11,
       "tipo": "PLA"
-    },
-    {
-      "id": 7,
-      "nome": "PETG Preto Carbono",
-      "marca": "China",
-      "precoRolo": 63.15,
-      "pesoRolo_g": 1000,
-      "custoPorGrama": 0.06,
-      "tipo": "PETG"
     }
   ]
 }

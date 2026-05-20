@@ -9,7 +9,7 @@
         "custoHora": 7.76
     },
 
-    "consumiveis": {
+    "valoresReferenciaConsumiveis": {
         "sacolaP": 0.72,
         "sacolaM": 0.94
     },
@@ -27,17 +27,11 @@
     },
 
     "despesasFixas": {
-        "depreciacaoImobilizado": 38.29,
         "agua": 50.00,
-        "aluguelCondominio": 500.00,
-        "celular": 40.00,
-        "combustivel": 150.00,
+        "celular": 15.00,
+        "combustivel": 40.00,
         "energiaEletrica": 50.00,
-        "internet": 50.00,
-        "limpeza": 100.00,
-        "DAS": 81.90,
-        "aluguelCarro": 100.00,
-        "consultoria": 500.00
+        "internet": 50.00
     },
 
     "impressoras": [
@@ -45,7 +39,7 @@
         "id": 1,
         "nome": "A1 + AMS",
         "preco": 6331.14,
-        "manutencao": 1582.79,
+        "percentualManutencao": 0.25,
         "vidaUtilHoras": 5000,
         "consumoKW": 0.150
         }
@@ -55,32 +49,27 @@
         {
         "item": "Mesa Ergonomica",
         "valor": 1078.94,
-        "vidaUtilAnos": 5,
-        "depreciacaoMensal": 17.98
+        "vidaUtilAnos": 5
         },
         {
         "item": "Alicate Corte",
         "valor": 19.91,
-        "vidaUtilAnos": 1,
-        "depreciacaoMensal": 1.66
+        "vidaUtilAnos": 1        
         },
         {
         "item": "Microfone Hollyland",
         "valor": 701.00,
-        "vidaUtilAnos": 5,
-        "depreciacaoMensal": 11.68
+        "vidaUtilAnos": 5
         },
         {
         "item": "Base p/ Corte Estilete",
         "valor": 137.96,
-        "vidaUtilAnos": 5,
-        "depreciacaoMensal": 2.30
+        "vidaUtilAnos": 5        
         },
         {
         "item": "Silica Gel 1kg",
         "valor": 55.98,
-        "vidaUtilAnos": 1,
-        "depreciacaoMensal": 4.67
+        "vidaUtilAnos": 1        
         }
     ]
     }
