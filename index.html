@@ -1020,13 +1020,12 @@ function preencherSelectMaterial(select){
     </option>
   `;
 
-  materiais.forEach(material => {
+materiais.forEach((material,index) => {
 
     const option =
       document.createElement('option');
 
-    option.value =
-      material.id;
+option.value = index;
 
 const custoPorGrama =
   material.precoRolo / material.pesoRolo_g;
@@ -1075,6 +1074,7 @@ function carregarImpressoras(){
 const manutencao =
 
   item.preco *
+
   item.percentualManutencao;
 
 const depreciacaoHora =
@@ -1087,7 +1087,6 @@ const depreciacaoHora =
 /
 
 item.vidaUtilHoras;
-
 option.textContent =
   `${item.nome} • R$ ${depreciacaoHora.toFixed(2).replace('.',',')}/h`;
 
@@ -1479,19 +1478,14 @@ function calcular(){
 
     .forEach(item => {
 
-      const materialId =
+const materialIndex = parseInt(
+  item.querySelector(
+    '.material-peca'
+  ).value
+);
 
-        parseInt(
-          item.querySelector(
-            '.material-peca'
-          ).value
-        );
-
-      const material =
-
-        materiais.find(
-          m => m.id == materialId
-        );
+const material =
+  materiais[materialIndex];
 
       if(!material) return;
 
@@ -1696,11 +1690,30 @@ const despesasFixas =
   // CUSTO HORA
   // =========================
 
-  const custoHora =
+const produtividade =
+  config.produtividade;
 
-    despesasFixas /
+const horasMaximasMes =
 
-    config.produtividade.horasProdutivasMes;
+  produtividade.pessoasProdutivas *
+
+  produtividade.horasDiarias *
+
+  produtividade.diasTrabalhadosMes;
+
+const horasProdutivasMes =
+
+  horasMaximasMes *
+
+  (
+    produtividade.percentualProdutividade / 100
+  );
+
+const custoHora =
+
+  despesasFixas /
+
+  horasProdutivasMes;
 
   // =========================
   // ENERGIA
@@ -1729,6 +1742,7 @@ const despesasFixas =
 const manutencao =
 
   impressora.preco *
+
   impressora.percentualManutencao;
 
 const depreciacaoHora =
