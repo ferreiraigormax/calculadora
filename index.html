@@ -942,8 +942,11 @@ function preencherSelectMaterial(select){
     option.value =
       material.id;
 
-    option.textContent =
-      material.nome;
+const custoPorGrama =
+  material.precoRolo / material.pesoRolo_g;
+
+option.textContent =
+  `${material.nome} • R$ ${custoPorGrama.toFixed(2).replace('.',',')}/g`;
 
     select.appendChild(option);
 
