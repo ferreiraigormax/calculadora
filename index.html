@@ -112,8 +112,29 @@ body{
     1.4fr
     1fr
     .7fr
-    .7fr;
+    .7fr
+    52px;
+
   gap:14px;
+  align-items:end;
+}
+
+.peca-row .btn-remover{
+  margin-bottom:18px;
+}
+
+@media(max-width:768px){
+
+  .grid-4{
+    display:flex;
+    flex-direction:column;
+  }
+
+  .peca-row .btn-remover{
+    width:100%;
+    margin-bottom:0;
+  }
+
 }
 
 .field{
@@ -271,6 +292,7 @@ select:focus{
 .minutos-wrapper{
   width:100%;
   display:flex;
+  align-items:flex-end;
   gap:10px;
 }
 
@@ -508,6 +530,71 @@ select:focus{
     font-size:16px;
   }
 
+#listaPecas{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.peca-row{
+  display:flex;
+  flex-direction:column;
+}
+
+.grid-4{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.minutos-wrapper{
+  align-items:center;
+}
+
+.btn-add-peca,
+.btn-remover{
+  align-self:flex-end;
+}
+
+/* MELHORA SCROLL IOS */
+html,
+body{
+  height:100%;
+  overflow-x:hidden;
+  -webkit-overflow-scrolling:touch;
+}
+
+body{
+  overscroll-behavior-y:none;
+  touch-action:pan-y;
+}
+}
+
+#listaPecas{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.peca-row{
+  width:100%;
+}
+
+.peca-row .grid-4{
+  align-items:end;
+}
+
+.peca-row .btn-remover{
+  margin-bottom:18px;
+}
+
+@media(max-width:768px){
+
+  .peca-row .btn-remover{
+    width:100%;
+    margin-bottom:0;
+  }
+
 }
 </style>
 </head>
@@ -591,23 +678,15 @@ select:focus{
 
         <label>Minutos</label>
 
-        <div class="minutos-wrapper">
+<div class="minutos-wrapper">
 
-          <input
-            type="text"
-            class="tempoMinutos"
-            inputmode="decimal"
-          >
+  <input
+    type="text"
+    class="tempoMinutos"
+    inputmode="decimal"
+  >
 
-          <button
-            type="button"
-            class="btn-add-peca"
-            onclick="adicionarLinhaPeca()"
-          >
-            +
-          </button>
-
-        </div>
+</div>
 
       </div>
 
@@ -617,6 +696,13 @@ select:focus{
 
 </div>
 
+<button
+  type="button"
+  class="btn-add"
+  onclick="adicionarLinhaPeca()"
+>
+  + Adicionar peça
+</button>
       <!-- CONSUMÍVEIS -->
       <div class="accordion">
 
@@ -986,16 +1072,21 @@ function carregarImpressoras(){
 // DEPRECIAÇÃO/HORA REAL
 // =========================
 
+const manutencao =
+
+  item.preco *
+  item.percentualManutencao;
+
 const depreciacaoHora =
 
-  (
-    item.preco +
-    item.manutencao
-  )
+(
+  item.preco +
+  manutencao
+)
 
-  /
+/
 
-  item.vidaUtilHoras;
+item.vidaUtilHoras;
 
 option.textContent =
   `${item.nome} • R$ ${depreciacaoHora.toFixed(2).replace('.',',')}/h`;
@@ -1218,6 +1309,16 @@ function adicionarLinhaPeca(){
       'listaPecas'
     );
 
+  const ultimaLinha =
+    container.querySelector(
+      '.peca-row:last-child'
+    );
+
+  const ultimoMaterial =
+    ultimaLinha?.querySelector(
+      '.material-peca'
+    )?.value || '';
+
   const div =
     document.createElement('div');
 
@@ -1273,17 +1374,17 @@ function adicionarLinhaPeca(){
             inputmode="decimal"
           >
 
-          <button
-            type="button"
-            class="btn-remover"
-            onclick="removerLinhaPeca(this)"
-          >
-            ×
-          </button>
-
         </div>
 
       </div>
+
+      <button
+        type="button"
+        class="btn-remover"
+        onclick="removerLinhaPeca(this)"
+      >
+        ×
+      </button>
 
     </div>
 
@@ -1291,11 +1392,17 @@ function adicionarLinhaPeca(){
 
   container.appendChild(div);
 
-  preencherSelectMaterial(
+  const selectMaterial =
     div.querySelector(
       '.material-peca'
-    )
+    );
+
+  preencherSelectMaterial(
+    selectMaterial
   );
+
+  selectMaterial.value =
+    ultimoMaterial;
 
   div
     .querySelectorAll(
@@ -1321,6 +1428,8 @@ function adicionarLinhaPeca(){
       );
 
     });
+
+  calcular();
 
 }
 function removerLinhaPeca(botao){
@@ -1533,17 +1642,55 @@ function calcular(){
   // DESPESAS FIXAS
   // =========================
 
-  const despesasFixas =
+// =========================
+// DEPRECIAÇÃO ITENS
+// =========================
 
-    Object.values(
-      config.despesasFixas
-    )
+const depreciacaoImobilizado =
 
-    .reduce(
-      (total,valor) =>
-        total + valor,
-      0
-    );
+  config.depreciacaoItens.reduce(
+    (total,item) => {
+
+      const depreciacaoMensal =
+
+        item.valor /
+
+        (
+          item.vidaUtilAnos * 12
+        );
+
+      return (
+        total +
+        depreciacaoMensal
+      );
+
+    },
+    0
+  );
+
+// =========================
+// DESPESAS FIXAS
+// =========================
+
+const despesasFixasBase =
+
+  Object.entries(
+    config.despesasFixas
+  )
+
+  .reduce(
+    (total,[chave,valor]) => {
+
+      return total + valor;
+
+    },
+    0
+  );
+
+const despesasFixas =
+
+  despesasFixasBase +
+  depreciacaoImobilizado;
 
   // =========================
   // CUSTO HORA
@@ -1579,16 +1726,21 @@ function calcular(){
   // DEPRECIAÇÃO
   // =========================
 
-  const depreciacaoHora =
+const manutencao =
 
-    (
-      impressora.preco +
-      impressora.manutencao
-    )
+  impressora.preco *
+  impressora.percentualManutencao;
 
-    /
+const depreciacaoHora =
 
-    impressora.vidaUtilHoras;
+(
+  impressora.preco +
+  manutencao
+)
+
+/
+
+impressora.vidaUtilHoras;
 
   const custoDepreciacao =
 
