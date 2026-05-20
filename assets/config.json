@@ -3,10 +3,7 @@
         "pessoasProdutivas": 1,
         "horasDiarias": 8,
         "diasTrabalhadosMes": 22,
-        "horasMaximasMes": 176,
-        "percentualProdutividade": 85,
-        "horasProdutivasMes": 149.6,
-        "custoHora": 7.76
+        "percentualProdutividade": 85
     },
 
     "valoresReferenciaConsumiveis": {
