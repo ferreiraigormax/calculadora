@@ -665,7 +665,7 @@ body{
       </div>
 
       <div class="field">
-        <label>Horas</label>
+        <label>Horas (0.00)</label>
 
         <input
           type="text"
@@ -1148,22 +1148,29 @@ function moeda(valor){
   );
 
 }
-
 function numeroBR(valor){
 
   if(!valor) return 0;
 
+  valor = valor.toString().trim();
+
+  // aceita ponto como decimal
+  if(valor.includes('.') && !valor.includes(',')){
+
+    return parseFloat(valor) || 0;
+
+  }
+
+  // padrão BR com vírgula
   return parseFloat(
 
     valor
-      .toString()
       .replace(/\./g,'')
       .replace(',','.')
 
   ) || 0;
 
 }
-
 function arred(valor){
 
   return Number(
@@ -1353,7 +1360,7 @@ function adicionarLinhaPeca(){
       </div>
 
       <div class="field">
-        <label>Horas</label>
+        <label>Horas (0.00)</label>
 
         <input
           type="text"
@@ -1498,39 +1505,55 @@ const material =
           ).value
         );
 
-      const horasItem =
+      const horasDecimal =
 
-        numeroBR(
-          item.querySelector(
-            '.tempoHoras'
-          ).value
-        );
+  numeroBR(
+    item.querySelector(
+      '.tempoHoras'
+    ).value
+  );
 
-      const minutosItem =
+const minutosItem =
 
-        numeroBR(
-          item.querySelector(
-            '.tempoMinutos'
-          ).value
-        );
+  numeroBR(
+    item.querySelector(
+      '.tempoMinutos'
+    ).value
+  );
 
-      const custoPorGrama =
+// separa horas inteiras
+const horasInteiras =
+  Math.floor(horasDecimal);
 
-        material.precoRolo /
-        material.pesoRolo_g;
+// pega parte decimal
+const parteDecimal =
+  horasDecimal - horasInteiras;
 
-      custoMaterial +=
+// converte decimal em minutos
+const minutosConvertidos =
+  parteDecimal * 60;
 
-        pesoItem *
-        custoPorGrama;
+const custoPorGrama =
 
-      peso += pesoItem;
+  material.precoRolo /
+  material.pesoRolo_g;
 
-      tempo +=
+custoMaterial +=
 
-        horasItem +
-        (minutosItem / 60);
+  pesoItem *
+  custoPorGrama;
 
+peso += pesoItem;
+
+// soma total em horas
+tempo +=
+
+  horasInteiras +
+
+  (
+    (minutosConvertidos + minutosItem)
+    / 60
+  );
     });
 
   // =========================
