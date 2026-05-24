@@ -35,6 +35,13 @@
       "custoPorGrama": 0.07,
       "tipo": "PETG"
     },
+        {
+          "nome": "PETG Amarelo Masterprint",
+      "precoRolo": 109.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.11,
+      "tipo": "PETG"
+    },
     {
           "nome": "PETG Branco Masterprint",
       "precoRolo": 71.90,
