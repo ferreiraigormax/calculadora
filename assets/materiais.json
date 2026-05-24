@@ -65,6 +65,14 @@
     },
     {
     
+      "nome": "PLA Preto 3D Print",
+      "precoRolo": 78.90,
+      "pesoRolo_g": 1000,
+      "custoPorGrama": 0.08,
+      "tipo": "PLA"
+    },
+    {
+    
       "nome": "PLA Rosa Claro Genérico",
       "precoRolo": 102.00,
       "pesoRolo_g": 1000,
