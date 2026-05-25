@@ -24,11 +24,13 @@
     },
 
     "despesasFixas": {
-        "agua": 50.00,
+        "agua": 25.00,
         "celular": 15.00,
-        "combustivel": 40.00,
+        "combustivel": 20.00,
         "energiaEletrica": 50.00,
-        "internet": 50.00
+        "internet": 50.00,
+        "adobe": 80.00,
+        "Office": 60.00
     },
 
     "impressoras": [
