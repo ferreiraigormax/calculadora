@@ -8,11 +8,11 @@
       "tipo": "PETG"
     },
     {
-          "nome": "PETG Preto Carbono China",
+          "nome": "PLA Preto Carbono China",
       "precoRolo": 63.15,
       "pesoRolo_g": 1000,
       "custoPorGrama": 0.06,
-      "tipo": "PETG"
+      "tipo": "PLA"
     },
     {
           "nome": "PETG Amarelo Masterprint",
